@@ -2,15 +2,12 @@ package com.example.springstudy.entity;
 
 import com.example.springstudy.entity.enums.Grade;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class member {
+public class Member {
     private Long id;
     private String name;
     private Grade grade;
 
-    public member(Long id, String name, Grade grade) {
+    public Member(Long id, String name, Grade grade) {
         this.id = id;
         this.name = name;
         this.grade = grade;
@@ -41,4 +38,3 @@ public class member {
     }
 }
 
-}

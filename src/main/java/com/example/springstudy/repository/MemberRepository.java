@@ -1,6 +1,7 @@
 package com.example.springstudy.repository;
 
-import java.lang.reflect.Member;
+
+import com.example.springstudy.entity.Member;
 
 public interface MemberRepository {
 

@@ -1,5 +1,6 @@
 package com.example.springstudy.member;
 
+import com.example.springstudy.config.AppConfig;
 import com.example.springstudy.entity.Member;
 import com.example.springstudy.entity.enums.Grade;
 import com.example.springstudy.service.MemberService;
@@ -8,8 +9,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
-
-    MemberService memberService = new MemberServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
 
     @Test
     void join() {

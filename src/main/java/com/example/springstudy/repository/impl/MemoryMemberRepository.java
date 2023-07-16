@@ -15,7 +15,9 @@ public class MemoryMemberRepository implements MemberRepository {
     즉, lock 수행을 하기 위해서 사용하는 경우가 있다.
     */
 
-    Map<Long, Member> memberMap = new HashMap<>();
+    /* static -> 전역으로 사용되는 변수는 static 메모리에 포함되어 있어 모든 객체와 메소드의 영향이 동일하게 적용된다. */
+
+    private static final Map<Long, Member> memberMap = new HashMap<>();
 
     @Override
     public void save(Member member) {

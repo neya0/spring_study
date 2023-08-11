@@ -7,7 +7,13 @@ import com.example.springstudy.service.impl.MemberServiceImpl;
 import com.example.springstudy.service.impl.OrderServiceImpl;
 import com.example.springstudy.util.DiscountPolicy;
 import com.example.springstudy.util.RateDiscountPolicy;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+/*
+ 이렇게 의존성 주입을 맡아서 해주는 것을 DI 컨테이너라고 한다.
+ */
+@Configuration
 public class AppConfig {
 
     /*
@@ -16,19 +22,23 @@ public class AppConfig {
     역할이 명확하게 보이는게 좋음
      */
 
+    @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
 
+    @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
-    private MemoryMemberRepository memberRepository() {
+    @Bean
+    public MemoryMemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
-    private DiscountPolicy discountPolicy() {
+    @Bean
+    public DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }
 }

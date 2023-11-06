@@ -3,9 +3,12 @@ package com.example.springstudy.repository.impl;
 import com.example.springstudy.repository.MemberRepository;
 
 import com.example.springstudy.entity.Member;
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class MemoryMemberRepository implements MemberRepository {
 
     /*

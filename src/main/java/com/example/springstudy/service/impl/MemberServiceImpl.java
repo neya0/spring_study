@@ -3,7 +3,10 @@ package com.example.springstudy.service.impl;
 import com.example.springstudy.entity.Member;
 import com.example.springstudy.repository.MemberRepository;
 import com.example.springstudy.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MemberServiceImpl implements MemberService {
 
     // 현재의 문제점 -> memberRepository 구현제까지 의존되고 있다. 이것은 DIP를 위반하고 있다.
@@ -11,6 +14,7 @@ public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

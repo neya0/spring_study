@@ -2,7 +2,9 @@ package com.example.springstudy.util;
 
 import com.example.springstudy.entity.Member;
 import com.example.springstudy.entity.enums.Grade;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int DiscountRate = 10;
